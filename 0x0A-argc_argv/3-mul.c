@@ -12,23 +12,15 @@
 
 int main(int argc, char *argv[])
 {
-	int i, mult;
-
-	mult = 1;
-
 	if (argc > 1)
 	{
-		for (i = 1; i < argc; i++)
-		{
-			mult *= atoi(argv[i]);
-		}
-		printf("%d\n", mult);
+		printf("%d\n", atoi(argv[1]) * atoi(argv[2]));
 	}
 	else
 	{
 		printf("Error\n");
-		return 1;
+		return (1);
 	}
-	
+
 	return (0);
 }
