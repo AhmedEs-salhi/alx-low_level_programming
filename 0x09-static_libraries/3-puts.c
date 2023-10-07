@@ -1,24 +1,19 @@
-#include <stdio.h>
+#include "main.h"
 
-int puts2(char *str)
+/**
+ * _puts - prints a string, followed by a new line,
+ * @str: pointer to the string to print
+ * Return: void
+ */
+
+void _puts(char *str)
 {
-
-	
 	int i = 0;
-	
+
 	while (str[i])
 	{
+		_putchar(str[i]);
 		i++;
 	}
-
-	int j = 0;
-
-	while (j <= i)
-	{
-		putchar(str[j] + 0);
-		j = j + 1;
-	}
-	putchar('\n');
-
-	return 0;
+	_putchar('\n');
 }
