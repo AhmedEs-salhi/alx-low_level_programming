@@ -1,12 +1,9 @@
-#include <stdio.h>
 #include "main.h"
 
-int main()
+int main(void)
 {
-	char *str = "At the end of the day, my goal was to be the best hacker\n\t -Kevin Mitnick";
+	puts("\"At the end of the day, my goal was to be the best hacker\"\n\t- Kevin Mitnick");
 
-	puts(str);
-
-	return 0;
+	return (0);
 }
 
