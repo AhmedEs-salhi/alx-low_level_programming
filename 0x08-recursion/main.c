@@ -1,10 +1,10 @@
-#include <stdio.h>
+#include "main.h"
 
 int main(void)
 {
     int n;
 
-   // n = _strlen_recursion("Corbin Coleman");
-    printf("%d\n", _strlen_recursion("Corbin Colman"));
+//    n = _puts_recursion("Corbin Coleman");
+	_print_rev_recursion("Corbin Colman");
     return (0);
 }
