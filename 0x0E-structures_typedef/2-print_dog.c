@@ -2,13 +2,11 @@
 #include <stdio.h>
 
 /**
- * print_dog - function that prints
- * a structure
- * @d: struct dog
+ * print_dog - prints a struct dog.
+ * @d: struct dog.
  *
- * Return: void
+ * Return: no return.
  */
-
 void print_dog(struct dog *d)
 {
 	if (d)
@@ -21,9 +19,8 @@ void print_dog(struct dog *d)
 		printf("Age: %f\n", d->age);
 
 		if (!(d->owner))
-			printf("Owner: (nil)");
+			printf("Owner: (nil)\n");
 		else
 			printf("Owner: %s\n", d->owner);
 	}
-
 }
