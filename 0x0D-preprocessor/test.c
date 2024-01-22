@@ -1,9 +1,9 @@
 #include <stdio.h>
 
-#define print printf("print this \n")
+#define FILE
 
 int main()
 {
-	print;
+	printf("%s\n", __FILE__);
 	return 0;
 }
