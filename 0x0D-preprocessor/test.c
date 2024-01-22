@@ -1,18 +1,9 @@
-#include "1-pi.h"
-#include "1-pi.h"
 #include <stdio.h>
 
-/**
- * main - check the code
- *
- * Return: Always 0.
- */
-int main(void)
-{
-    float a;
-    float r;
+#define print printf("print this \n")
 
-    r = 98;
-    printf("%.3f\n", PI);
-    return (0);
+int main()
+{
+	print;
+	return 0;
 }
