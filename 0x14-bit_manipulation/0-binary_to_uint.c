@@ -11,21 +11,17 @@
 
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int i, sum, len;
+	unsigned int sum;
 
-	len = _strlen(b);
 	sum = 0;
-
 	if (!b)
 		return (0);
 
-	for (i = 0; i < len; i++)
+	while (*b)
 	{
-		if (*(b + i) == '1')
-			sum += power(2, ((len - i) - 1));
-		else if (*(b + i) != '0')
+		if (*b != '1' && *b != '0')
 			return (0);
-
+		sum = sum * 2 + (*b++ - '0');
 	}
 	return (sum);
 }
