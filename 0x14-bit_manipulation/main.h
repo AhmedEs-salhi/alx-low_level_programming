@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 
-unsigned int binary_to_int(const char *);
+unsigned int binary_to_uint(const char *);
 unsigned int power(int, int);
 unsigned int _strlen(const char *);
 
