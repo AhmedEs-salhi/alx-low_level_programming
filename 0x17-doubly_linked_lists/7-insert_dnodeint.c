@@ -13,7 +13,7 @@
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 	dlistint_t *one, *two, *toAdd;
-	unsigned int cpt = 0;
+	unsigned int cpt;
 
 	if (!h || idx > dlistint_len(*h))
 		return (NULL);
@@ -25,6 +25,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		add_dnodeint_end(h, n);
 
 	two = *h;
+	cpt = 0;
 	while (two->next)
 	{
 		one = two;
