@@ -39,7 +39,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 			toAdd->next = two;
 			two->prev = toAdd;
 			toAdd->n = n;
-			return (toAdd);
 		}
 	}
+	return toAdd;
 }
