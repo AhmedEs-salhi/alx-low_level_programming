@@ -33,13 +33,13 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (!new)
 		return (0);
 	new->value = strdup(value);
-	if (!new->value)
+	if (!new->key)
 	{
-		free(new->value);
+		free(new);
 		return (0);
 	}
 	new->key = strdup(key);
-	if (!new->key)
+	if (!new->value)
 	{
 		free(new->key);
 		free(new);
