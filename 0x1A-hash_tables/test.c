@@ -1,32 +1,21 @@
-#include "hash_tables.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-/**
- * hash_djb2 - implementation of the djb2 algorithm
- * @str: string used to generate hash value
- *
- * Return: hash value
- */
-unsigned long int hash_djb2(const unsigned char *str)
+char *strDup(char *str)
 {
-	unsigned long int hash;
-	int c, i;
-
-	hash = 5381;
-	i = 1;
-	while ((c = *str++))
-	{
-		hash = ((hash << 5) + hash) + c; /* hash * 33 + c */
-	}
-	return (hash);
+	char* strDup;
+	strDup = malloc(sizeof(char) * strlen(str));
+	strDup = str;
+	free(str);
+	return strDup;
 }
 
 int main()
 {
-	int c = 5381;
-	int shift = c << 5;
-	unsigned long int result = hash_djb2("Don't forget to tweet today");
+	char* str;
 
-	printf("%ld mod 1024 = %d\n", result, result % 1024);
-
+	str = strdup("Ahmed");
+	printf("My name is %s\n", str);
 	return 0;
 }
