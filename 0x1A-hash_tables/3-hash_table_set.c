@@ -16,24 +16,22 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	if (!key || !value || !ht)
 		return (0);
-
 	idx = key_index((const unsigned char *)key, ht->size);
 	current = ht->array[idx];
-
 	while (current)
 	{
 		if (strcmp(current->key, key) == 0)
 		{
 			free(current->value);
 			current->value = strdup(value);
+			if (!current->value)
+				return (0);
 		}
 		current = current->next;
 	}
-
 	new = malloc(sizeof(hash_node_t));
 	if (!new)
 		return (0);
-
 	new->value = strdup(value);
 	if (!new->value)
 	{
