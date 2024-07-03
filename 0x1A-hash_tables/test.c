@@ -1,21 +1,19 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-char *strDup(char *str)
-{
-	char* strDup;
-	strDup = malloc(sizeof(char) * strlen(str));
-	strDup = str;
-	free(str);
-	return strDup;
-}
+#include "hash_tables.h"
 
 int main()
 {
-	char* str;
+	hash_table_t *ht;
 
-	str = strdup("Ahmed");
-	printf("My name is %s\n", str);
-	return 0;
+	ht = hash_table_create(1024);
+	hash_table_set(ht, "f", "0");
+	hash_table_set(ht, "e", "1");
+	hash_table_set(ht, "h", "2");
+	hash_table_set(ht, "b", "3");
+	hash_table_set(ht, "c", "4");
+	hash_table_set(ht, "d", "5");
+	hash_table_set(ht, "a", "6");
+	hash_table_print(ht);
+
+	return (EXIT_SUCCESS);
+
 }
