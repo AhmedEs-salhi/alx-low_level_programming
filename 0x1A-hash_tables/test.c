@@ -2,7 +2,7 @@
 
 int main()
 {
-	hash_table_t *ht;
+	shash_table_t *ht;
 
 	ht = hash_table_create(1024);
 	hash_table_set(ht, "f", "0");
