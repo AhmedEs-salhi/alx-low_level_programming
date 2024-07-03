@@ -8,6 +8,7 @@
  *
  * Return: Always EXIT_SUCCESS.
  */
+
 int main(void)
 {
     shash_table_t *ht;
