@@ -1,7 +1,12 @@
 #include <stdio.h>
 
-int factoriel(int n)
+unsigned long long factoriel(int n)
 {
+	if (n < 0)
+		return (-1);
+	if (n == 0)
+		return (1);
+
 	int fact;
 	int i;
 	
@@ -21,7 +26,7 @@ float Coefficient_binomial(int n, int k)
 	b = factoriel(k);
 	c = factoriel(n - k);
 
-	coefficient = a / (b * c);
+	coefficient = (float)a / (b * c);
 
 	return coefficient;
 }

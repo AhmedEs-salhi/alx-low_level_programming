@@ -55,6 +55,16 @@ int *somme_matrice(int m[][MAX], int n[][MAX], int l, int c)
 
 	return (matPtr);
 }
+
+/**
+ * main - asldjaflskfjö
+ * @arg1
+ * @ar2
+ *
+ * Description: alsdjföasjfalsjd
+ *
+ * Return: 
+ */
 	
 int main()
 {
@@ -76,3 +86,4 @@ int main()
 	printf("Succeed\n");
 	return (0);
 }
+
