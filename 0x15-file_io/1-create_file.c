@@ -11,14 +11,14 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	ssize_t _open, _creat, _write;
+	ssize_t _open;
 
 	if (!filename)
 		return (-1);
 
-	_creat = creat(filename, S_IRUSR | S_IWUSR);
+	creat(filename, S_IRUSR | S_IWUSR);
 	_open = open(filename, O_CREAT | O_RDWR);
-	_write = write(_open, text_content, strlen(text_content));
+	write(_open, text_content, strlen(text_content));
 	close(_open);
 
 	return (1);
