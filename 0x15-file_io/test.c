@@ -2,7 +2,7 @@
 
 /**
  * read_textfile - reads an amount of bytes from a file
- *		   and write it to the POSIX standard
+ * 		   and write it to the POSIX standard
  * @filename: The path or the name of the file to read data from
  * @letters: Number of letters to be read from the file
  *
@@ -20,11 +20,11 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	byteNumber = read(openFile, buffer, letters);
 
 	if (!buffer || !filename || openFile == -1 || byteNumber == -1)
-		return (0);
+		return 0;
 
 	write(1, buffer, byteNumber);
 	free(buffer);
 	close(openFile);
 
-	return (byteNumber);
+	return byteNumber;
 }
