@@ -22,9 +22,9 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (!buffer || !filename || openFile == -1 || byteNumber == -1)
 		return (0);
 
-	byteWritten = write(1, buffer, byteNumber);
+	byteWritten = write(STDOUT_FILENO, buffer, byteNumber);
 	if (byteWritten == -1)
-		return 0;
+		return (0);
 	free(buffer);
 	close(openFile);
 
