@@ -13,7 +13,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	int openFile;
 	char *buffer;
 	ssize_t byteNumber;
-	size_t numberByteWritten;
 
 	buffer = malloc(sizeof(char) * letters);
 	openFile = open(filename, O_RDWR);
