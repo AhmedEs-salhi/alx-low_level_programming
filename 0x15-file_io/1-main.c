@@ -17,7 +17,7 @@ int main(int ac, char **av)
         exit(1);
     }
     /*res = create_file("ahmed", "This is some content");*/
-    res = create_file(av[1], av[2]);
+    res = create_file(av[1],av[2]);
     printf("-> %i)\n", res);
     return (0);
 }

@@ -11,21 +11,19 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	ssize_t _open, _creat, _write;
+	ssize_t _open, _write;
 
 	if (!filename)
 		return (-1);
+
+	_open = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
+	if ((_open == -1))
+		return (-1);
 	if (!text_content)
 	{
-		_creat = creat(filename, S_IRUSR | S_IWUSR);
-		if (_creat == -1)
-			return (-1);
+		close(_open);
 		return (1);
 	}
-	_creat = creat(filename, S_IRUSR | S_IWUSR);
-	_open = open(filename, O_CREAT | O_RDWR | O_TRUNC);
-	if ((_creat == -1) | (_open == -1))
-		return (-1);
 
 	_write = write(_open, text_content, strlen(text_content));
 	if (_write == -1)
