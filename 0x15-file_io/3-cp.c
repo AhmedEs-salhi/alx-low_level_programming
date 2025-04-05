@@ -22,7 +22,7 @@ int copy_file(const char *file_from, const char *file_to)
 		return (98);
 
 	read(open_from, buffer, 1024);
-	write_to = write(open_to, buffer, strlen(buffer));
+	write_to = write(open_to, buffer, 1024);
 	if (open_to == -1 || write_to == -1)
 		return (99);
 	close_from = close(open_from);
