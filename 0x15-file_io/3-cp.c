@@ -12,7 +12,7 @@
 
 int copy_file(const char *file_from, const char *file_to)
 {
-	int open_from, read_from, close_from;
+	int open_from, close_from;
 	int open_to, write_to, close_to;
 	char *buffer = malloc(sizeof(char) * 1024);
 
@@ -21,7 +21,7 @@ int copy_file(const char *file_from, const char *file_to)
 	if (open_from == -1)
 		return (98);
 
-	read_from = read(open_from, buffer, 1024);
+	read(open_from, buffer, 1024);
 	write_to = write(open_to, buffer, strlen(buffer));
 	if (open_to == -1 || write_to == -1)
 		return (99);
