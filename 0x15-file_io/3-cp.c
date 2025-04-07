@@ -1,5 +1,5 @@
 #include "main.h"
-#define BUFFER_SIZE 3000
+
 /**
  * copy_file - Copies the content of a @file_from to @file_to
  *
@@ -12,7 +12,7 @@
 
 int copy_file(const char *file_from, const char *file_to)
 {
-	int open_from, close_from;
+	int open_from, close_from, read_from;
 	int open_to, write_to, close_to;
 	char *buffer = malloc(sizeof(char) * BUFFER_SIZE);
 
@@ -21,8 +21,8 @@ int copy_file(const char *file_from, const char *file_to)
 	if (open_from == -1)
 		return (98);
 
-	read(open_from, buffer, BUFFER_SIZE);
-	write_to = write(open_to, buffer, BUFFER_SIZE);
+	while (read_from = read(open_from, buffer, sizeof(buffer)) > 0)
+		write_to = write(open_to, buffer, sizeof(buffer));
 	if (open_to == -1 || write_to == -1)
 		return (99);
 	close_from = close(open_from);
