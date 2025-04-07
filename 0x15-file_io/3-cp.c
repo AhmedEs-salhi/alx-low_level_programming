@@ -28,13 +28,13 @@ int copy_file(const char *file_from, const char *file_to)
 	close_from = close(open_from);
 	if (close_from == -1)
 	{
-		dprintf(2, "Error: Can't close the fd %ld\n", open_from);
+		dprintf(2, "Error: Can't close %ld\n", open_from);
 		return (100);
 	}
 	close_to = close(open_to);
 	if (close_to == -1)
 	{
-		dprintf(2, "Error: Can't close the fd %ld\n", open_to);
+		dprintf(2, "Error: Can't close %ld\n", open_to);
 		return (100);
 	}
 
@@ -75,4 +75,3 @@ int main(int argc, char **argv)
 		exit(100);
 	return (0);
 }
-
