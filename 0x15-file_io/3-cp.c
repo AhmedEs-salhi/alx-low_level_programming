@@ -73,7 +73,6 @@ int main(int argc, char **argv)
 	}
 	if (result == 100)
 		exit(100);
-	printf("result -> %i)\n", result);
 	return (0);
 }
 
