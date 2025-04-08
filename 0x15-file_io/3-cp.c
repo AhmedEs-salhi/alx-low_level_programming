@@ -25,18 +25,11 @@ int copy_file(const char *file_from, const char *file_to)
 		write_to = write(open_to, buffer, read_from);
 	if (open_to == -1 || write_to == -1)
 		return (99);
+
 	close_from = close(open_from);
-	if (close_from == -1)
-	{
-		dprintf(2, "Error: Can't close %ld\n", open_from);
-		return (100);
-	}
 	close_to = close(open_to);
-	if (close_to == -1)
-	{
-		dprintf(2, "Error: Can't close %ld\n", open_to);
+	if (close_to == -1 || close_from == -1)
 		return (100);
-	}
 
 	return (1);
 }
@@ -63,6 +56,7 @@ int main(int argc, char **argv)
 	result = copy_file(argv[1], argv[2]);
 	if (result == 98)
 	{
+		dup2(STDERR_FILENO, STDOUT_FILENO);
 		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
@@ -72,6 +66,9 @@ int main(int argc, char **argv)
 		exit(99);
 	}
 	if (result == 100)
+	{
+		dprintf(2, "Error: Can't close fd\n");
 		exit(100);
+	}
 	return (0);
 }
