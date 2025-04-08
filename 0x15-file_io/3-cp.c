@@ -14,7 +14,7 @@ int copy_file(const char *file_from, const char *file_to)
 {
 	ssize_t open_from, close_from, read_from;
 	ssize_t open_to, write_to, close_to;
-	char *buffer = malloc(sizeof(char) * 1024);
+	char buffer[1024];
 
 	open_from = open(file_from, O_RDONLY);
 	open_to = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0664);
