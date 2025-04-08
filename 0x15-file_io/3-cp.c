@@ -17,7 +17,7 @@ int copy_file(const char *file_from, const char *file_to)
 	char *buffer = malloc(sizeof(char) * 1024);
 
 	open_from = open(file_from, O_RDONLY);
-	open_to = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0666);
+	open_to = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (open_from == -1)
 		return (98);
 
@@ -63,7 +63,7 @@ int main(int argc, char **argv)
 	result = copy_file(argv[1], argv[2]);
 	if (result == 98)
 	{
-		dprintf(2, "Error: Can't read from %s\n", argv[1]);
+		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 	if (result == 99)
