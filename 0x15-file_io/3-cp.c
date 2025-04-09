@@ -23,6 +23,8 @@ int copy_file(const char *file_from, const char *file_to)
 
 	while ((read_from = read(open_from, buffer, sizeof(buffer))) > 0)
 		write_to = write(open_to, buffer, read_from);
+	if (read_from < 0)
+		return (99);
 	if (open_to == -1 || write_to == -1)
 		return (99);
 
