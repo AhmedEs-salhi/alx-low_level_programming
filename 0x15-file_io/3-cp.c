@@ -30,10 +30,16 @@ int copy_file(const char *file_from, const char *file_to)
 
 	close_from = close(open_from);
 	if (close_from == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %ld\n", open_from);
 		return (100);
+	}
 	close_to = close(open_to);
 	if (close_to == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %ld\n", open_to);
 		return (100);
+	}
 
 	return (1);
 }
@@ -70,9 +76,6 @@ int main(int argc, char **argv)
 		exit(99);
 	}
 	if (result == 100)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd\n");
 		exit(100);
-	}
 	return (0);
 }
